@@ -167,6 +167,30 @@ th[role=columnheader]:not(.no-sort):hover:after {
 	border-radius: 4px;
 }
 
+.main-table span:is(.positive) {
+	background-color: rgba(79, 205, 171, 0.9);
+	padding: 4px 10px;
+	border-radius: 4px;
+	font-size: 18px;
+	color: white;
+}
+
+.main-table span:is(.none) {
+	background-color: rgb(190, 190, 190);
+	padding: 4px 10px;
+	border-radius: 4px;
+	font-size: 18px;
+	color: white;
+}
+
+.main-table span:is(.negative) {
+	background-color: rgba(230, 112, 181, 0.95);
+	padding: 4px 10px;
+	border-radius: 4px;
+	font-size: 18px;
+	color: white;
+}
+
 th:is(.th-rank) {
 	width: 55px;
 }
@@ -266,14 +290,14 @@ table:is(.sub-table) td {
 table:is(.sub-table) td:is(.r1) {
 	/*background-color: rgba(255, 158, 120, 0.19);*/
 	padding-left: 16px;
-	text-align: left;
+	text-align: center;
 	border-bottom: 1px solid rgba(215, 215, 215, 0.5);
 }
 
 table:is(.sub-table) td:is(.r2) {
 	/*background-color: rgba(252, 128, 77, 0.4);*/
 	padding-left: 16px;
-	text-align: left;
+	text-align: center;
 }
 
 a {

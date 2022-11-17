@@ -57,12 +57,6 @@ class DataBase:
                    f"\"{title}\", \"{authors}\", \"{keywords}\" " \
                    f") "
         else:
-            title = title.replace('\\', '').replace("\"", "'")
-            authors = [a.replace('\\', '').replace("\"", "'") for a in authors]
-            authors = ", ".join(authors)
-            keywords = [k.replace('\\', '').replace("\"", "'") for k in keywords]
-            keywords = ", ".join(keywords)
-
             num_rating = len(ratings)
             rating_avg = np.mean(ratings).item()
             rating_std = np.std(ratings).item()
@@ -71,8 +65,7 @@ class DataBase:
                    f"SET " \
                    f"s_{suf}_cnt = {num_rating}, s_{suf}_avg = {rating_avg}, " \
                    f"s_{suf}_std = {rating_std}, " \
-                   f"s_{suf}_list = \"{ratings}\", withdraw = {withdraw}, decision = \"{decision}\", " \
-                   f"title = \"{title}\", authors = \"{authors}\", keywords = \"{keywords}\" " \
+                   f"s_{suf}_list = \"{ratings}\", withdraw = {withdraw}, decision = \"{decision}\" " \
                    f"WHERE url_id = \"{item_id}\""
         print(_cmd)
         self.cursor.execute(_cmd)
